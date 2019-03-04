@@ -29,6 +29,7 @@ def value_b(bot, update):
     b = update.message.text.replace('/b', '')
     b  = "".join(b.split())
     bot.send_message(chat_id = update.message.chat_id, text = 'Тогда b = {}'.format(b))
+    bot.send_message(chat_id = update.message.chat_id, text = 'Введтие "/ans" чтобы увидеть ответ')
 def answers(bot, update):
     bot.send_message(chat_id = update.message.chat_id,text = 'Сумма будет равна = {}'.format(float(a)+float(b)))
     bot.send_message(chat_id = update.message.chat_id, text = 'Разность будет равна = {}'.format(float(a)-float(b)))
