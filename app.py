@@ -9,12 +9,11 @@ from telegram.ext import Updater, CommandHandler, CallbackQueryHandler, MessageH
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-COMMAND_MENU, WAITING_VALUES = range(2)
 reply_keyboard = [['/calc','/end']]
 markup = ReplyKeyboardMarkup(reply_keyboard, resize_keyboard=True)
 def start(bot, update):
     update.message.reply_text('Здравствуйте! Я бот-калькулятор.Для начала нажмите на одну из команд (/calc - для просмотра доступных операций /end -для окончания работы с ботом). ',reply_markup = markup)
-    return COMMAND_MENU
+   
 def basic_menu(bot, update):
     keyboard_customer = [[InlineKeyboardButton('Узнать сумму', callback_data='узнать сумму'),InlineKeyboardButton('Узнать разность', callback_data= 'узнать разность')],[InlineKeyboardButton('Узнать произведение', callback_data= 'узнать произведение'),InlineKeyboardButton('Узнать частное', callback_data= 'узнать частное')]]
     reply_markup = InlineKeyboardMarkup(keyboard_customer)
